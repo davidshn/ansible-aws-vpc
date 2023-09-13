@@ -118,6 +118,7 @@
    - name: create new NAT gateway
      ec2_vpc_nat_gateway:
       state: "{{state}}"
+      region: "{{region}}"
       subnet_id: "{{pubsub1_out.subnet.id}}"
       wait: yes
       if_exist_do_not_create: true
