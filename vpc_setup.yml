@@ -19,7 +19,7 @@
    - debug:
         var: vpcout
 
-   - name: Create sub zone in zone 1
+   - name: Create sub zone in zone 1 | PUBLIC
      ec2_vpc_subnet:
         vpc_id: "{{vpcout.vpc.id}}"
         region: "{{region}}"
@@ -30,3 +30,27 @@
         resource_tags:
          Name: vprofile-pubsub1
      register: pubsub1_out
+
+   - name: Create sub zone in zone 2 | PUBLIC
+     ec2_vpc_subnet:
+        vpc_id: "{{vpcout.vpc.id}}"
+        region: "{{region}}"
+        az: "{{zone2}}"
+        state: "{{state}}"
+        cidr: "{{pubsub2cidr}}"
+        map_public: yes
+        resource_tags:
+         Name: vprofile-pubsub2
+     register: pubsub2_out
+
+   - name: Create sub zone in zone 3 | PUBLIC
+     ec2_vpc_subnet:
+        vpc_id: "{{vpcout.vpc.id}}"
+        region: "{{region}}"
+        az: "{{zone3}}"
+        state: "{{state}}"
+        cidr: "{{pubsub3cidr}}"
+        map_public: yes
+        resource_tags:
+         Name: vprofile-pubsub3
+     register: pubsub3_out
