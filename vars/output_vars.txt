@@ -1,3 +1,4 @@
+region: us-east-2
 vpcid: vpc-09eb5575b23a79bcd
 pubsub1id: subnet-07979f61485293382
 pubsub2id: subnet-027a07c0157e7982a
@@ -8,3 +9,5 @@ privsub3id: subnet-07a84602fd0e0236c
 igwid: igw-072820c6b432df94a
 pubRTid: rtb-0dea53b85e77ca980
 NATGW_out: nat-01e2e9f1b61ef71dc
+privRTid:
+BastionSGid:
