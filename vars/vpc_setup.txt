@@ -24,4 +24,4 @@ state: present
 # BASTION VARS
 bastion_ami: ami-05e1405c57ab23683
 region: us-east-2
-myip: 109.253.204.128/32
+myip: 176.12.184.175/32
