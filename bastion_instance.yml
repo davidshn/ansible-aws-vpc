@@ -8,7 +8,7 @@
       include_vars: vars/vpc_setup.txt
  
     - name: Import VPC setup Variable
-      include_vars: vars/output_vars.txt
+      include_vars: vars/output_vars
 
     - name: Create vprofile ec2 key
       ec2_key:
@@ -59,7 +59,7 @@
 
     - name: Insert/Update "BastionSGid" in vars/output_vars
       blockinfile:
-        path: vars/output_vars.txt
+        path: vars/output_vars
         backup: yes
         block: |
           BastionSGid: {{BastionSG_out.group_id}}
